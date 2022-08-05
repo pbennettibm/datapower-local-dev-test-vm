@@ -102,4 +102,4 @@
 
 **Instructions**
 
-1. Clone and run the [datapower-operator-scripts](https://github.com/DataPower-on-Azure/datapower-operator-scripts) repo and follow its instructions to extract the necessary yaml files and deploy using your chosen method.
+1. Clone and run the [datapower-operator-scripts](https://github.ibm.com/Patrick-Bennett/datapower-operator-scripts-autogenerate) repo and follow its instructions to extract the necessary yaml files and deploy using your chosen method.
