@@ -73,16 +73,24 @@
   - ```
     exit
     ```
-7. Access the DataPower Gateway on [https://localhost:9090](https://localhost:9090) to import the validation-flow.zip file for demo purposes.
-8. Once your configuration is complete, export the config as a zip file and save everything to your mounted volumes.
+7. Access the DataPower Gateway on [https://localhost:9090](https://localhost:9090).
+  - Username and password both default to "admin"
+8. Import the validation-flow.zip file using the GUI.
+  - Initially select the "default" domain.
+  - There are several screens you will need to click through.
+  - Accept the configuration as is.
+9. Now that you have imported your configuration, test that it is working by navigating to [https://localhost:8001](https://localhost:8001).
+  - You should see the [JSON Placeholder](https://jsonplaceholder.typicode.com/) page.
+  - If for some reason it isn't working, attempt to re-import the provided zip file again and ensure that you accept all steps appropriately.
+10. Once your configuration is complete, export the config as a zip file and save everything to your mounted volumes.
   - In the GUI, click 'Save Configuration'.
   - In the CLI enter ```write memory```
   - Optional:
     - In the GUI, export the zip file if any changes were made to a configuration.
-9. Exit the datapower CLI
+11. Exit the datapower CLI
   - Type `exit` twice and then "control+C".
-11. Ensure that the config, local, and certs subdirectories are no longer empty.
-12. Stop and delete the Docker container as well as remove the pulled DataPower Docker image if you wish.
+12. Ensure that the config, local, and certs subdirectories are no longer empty.
+13. Stop and delete the Docker container as well as remove the pulled DataPower Docker image if you wish.
   - ```
     docker stop datapower
     ```
