@@ -34,27 +34,27 @@
   - Make sure you are in the directory that you created that contains the "config", "local", and "certs" folders.
   - Mac
     ```
-    docker run -it --name datapower \
+    docker run -it -e DATAPOWER_ACCEPT_LICENSE=true -e \
+    DATAPOWER_INTERACTIVE=true \
     -v $(pwd)/config:/opt/ibm/datapower/drouter/config \
     -v $(pwd)/local:/opt/ibm/datapower/drouter/local \
-    -v $(pwd)/certs:/opt/ibm/datapower/root/secure/usrcerts \
-    -e DATAPOWER_ACCEPT_LICENSE="true" \
-    -e DATAPOWER_INTERACTIVE="true" \
+    -v $(pwd)/certs:/opt/ibm/datapower/root/secire/user/certs \
     -p 9090:9090 \
     -p 8001:8001 \
+    --name datapower \
     icr.io/integration/datapower/datapower-limited:10.0.4.0
     ```
     _Note: Exposing port 8001 is specific to the validation-flow.zip.  Expose the correct port if importing a different flow._
   - Windows (PowerShell)
     ```
-    docker run -it --name datapower \
-    -v ${PWD}/config:/opt/ibm/datapower/drouter/config \
-    -v ${PWD}/local:/opt/ibm/datapower/drouter/local \
-    -v ${PWD}/certs:/opt/ibm/datapower/root/secure/usrcerts \
-    -e DATAPOWER_ACCEPT_LICENSE="true" \
-    -e DATAPOWER_INTERACTIVE="true" \
+    docker run -it -e DATAPOWER_ACCEPT_LICENSE=true -e \
+    DATAPOWER_INTERACTIVE=true \
+    -v ${pwd}/config:/opt/ibm/datapower/drouter/config \
+    -v ${pwd}/local:/opt/ibm/datapower/drouter/local \
+    -v ${pwd}/certs:/opt/ibm/datapower/root/secire/user/certs \
     -p 9090:9090 \
     -p 8001:8001 \
+    --name datapower \
     icr.io/integration/datapower/datapower-limited:10.0.4.0
     ```
     _Note: Exposing port 8001 is specific to the validation-flow.zip.  Expose the correct port if importing a different flow._
@@ -62,13 +62,10 @@
   - login: `admin`
   - Password: `admin`
   - ```
-    configure terminal
+    co
     ```
   - ```
-    web-mgmt
-    ```
-  - ```
-    admin-state "enabled"
+    web-mgmt 0 9090 9090
     ```
   - ```
     exit
