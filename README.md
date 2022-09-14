@@ -67,9 +67,6 @@
   - ```
     web-mgmt 0 9090 9090
     ```
-  - ```
-    exit
-    ```
 7. Access the DataPower Gateway on [https://localhost:9090](https://localhost:9090).
   - Username and password both default to "admin"
 8. Import the validation-flow.zip file using the GUI.
