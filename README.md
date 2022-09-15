@@ -9,11 +9,15 @@
 **Instructions**
 
 1. Create a folder for the project.
-2. Create the following subdirectories inside this folder.
+2. Clone this repo into that folder.
+3. Create the following subdirectories inside this folder.
   - config
   - local
   - certs
-3. Change the permissions on these sub directories.
+  - ```
+    mkdir config local certs
+    ```
+4. Change the permissions on these sub directories to allow the container to write it's volume mounted data to them.
   - Mac/Linux
     ```
     chmod -R 777 config local certs
