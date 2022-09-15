@@ -101,10 +101,16 @@
   - login: `admin`
   - Password: `admin`
   - ```
-    co
+    configure terminal
     ```
   - ```
-    web-mgmt 0 9090 9090
+    web-mgmt
+    ```
+  - ```
+    admin-state "enabled"
+    ```
+  - ```
+    exit
     ```
 7. Access the DataPower Gateway on [https://localhost:9090](https://localhost:9090).
   - Username and password both default to "admin"
@@ -120,12 +126,12 @@
   - In the CLI enter ```write memory```
   - Optional:
     - In the GUI, export the zip file if any changes were made to a configuration.
-11. Exit the datapower CLI
-  - Type `exit` twice and then "control+C".
-12. Ensure that the config, and local subdirectories are no longer empty by checking their contents.
-  - If the certs subdirectory is empty, it is because you did not correctly save your configuration in both the UI and the terminal.
-    - To fix this, repeat the steps 10 & 11.
+11. In a new terminal window, ensure that the config, and local subdirectories are no longer empty by checking their contents.
+  - If the certs subdirectory is empty, it is most likely because you did not correctly save your configuration in both the UI and the terminal.
+    - To fix this, repeat the step 10.
     - If the certs subdirectory is still empty, it is probably because you are running on a VM that does not have temporary file write access.
+12. In your original terminal window, exit the datapower CLI
+  - Type `exit` twice and then "control+C" to return to the command prompt.
 13. (Optional) Delete the Docker container as well as the pulled DataPower Docker/Podman image if you wish.
   - Docker
     - ```
