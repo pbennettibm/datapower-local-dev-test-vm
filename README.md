@@ -19,7 +19,8 @@
   - config
   - local
   - certs
-  - ```
+    ```
+    cd datapower-volume-mounts
     mkdir config local certs
     ```
 4. Change the permissions on these sub directories to allow the container to write it's volume mounted data to them.
@@ -121,7 +122,9 @@
     - In the GUI, export the zip file if any changes were made to a configuration.
 11. Exit the datapower CLI
   - Type `exit` twice and then "control+C".
-12. Ensure that the config, local, and certs subdirectories are no longer empty.
+12. Ensure that the config, and local subdirectories are no longer empty by checking their contents.
+  - If you are using the validation-flow.zip, the certs subdirectory will be empty as it does not contain keys & certificates.
+  - If you are importing a custom flow, your keys & certificates would be found in the the certs subdirectory. 
 13. Delete the Docker container as well as the pulled DataPower Docker/Podman image if you wish.
   - Docker
     - ```
