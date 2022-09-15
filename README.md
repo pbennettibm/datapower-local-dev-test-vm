@@ -9,8 +9,13 @@
 **Instructions**
 
 1. Create a folder for the project.
-2. Clone this repo into that folder.
-3. Create the following subdirectories inside this folder.
+2. Clone this repo into that parent folder.
+3. Create a folder for the virtual DatatPower container volume mounts into your parent folder.
+  - I would suggest:
+    ```
+    mkdir datapower-volume-mounts
+    ```
+4. Navigate to the folder you just created and create the following subdirectories inside of it:
   - config
   - local
   - certs
