@@ -123,9 +123,10 @@
 11. Exit the datapower CLI
   - Type `exit` twice and then "control+C".
 12. Ensure that the config, and local subdirectories are no longer empty by checking their contents.
-  - If you are using the validation-flow.zip, the certs subdirectory will be empty as it does not contain keys & certificates.
-  - If you are importing a custom flow, your keys & certificates would be found in the the certs subdirectory. 
-13. Delete the Docker container as well as the pulled DataPower Docker/Podman image if you wish.
+  - If the certs subdirectory is empty, it is because you did not correctly save your configuration in both the UI and the terminal.
+    - To fix this, repeat the steps 10 & 11.
+    - If the certs subdirectory is still empty, it is probably because you are running on a VM that does not have temporary file write access.
+13. (Optional) Delete the Docker container as well as the pulled DataPower Docker/Podman image if you wish.
   - Docker
     - ```
       docker rm datapower
