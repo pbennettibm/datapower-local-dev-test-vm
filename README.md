@@ -24,7 +24,7 @@
     ```
     _Note: You may have to use the full path on Windows to correctly change the permissions on the directories. We haven't had the ability to test this yet._
 4. Pull the DataPower Docker image.
-   - Docker
+  - Docker
      ```
      docker pull icr.io/integration/datapower/datapower-limited:10.0.4.0
      ```
@@ -51,7 +51,7 @@
     --name datapower \
     icr.io/integration/datapower/datapower-limited:10.0.4.0
     ```
-    - Mac/Linux - Podman
+  - Mac/Linux - Podman
     ```
     podman run -it -e DATAPOWER_ACCEPT_LICENSE=true -e \
     DATAPOWER_INTERACTIVE=true \
